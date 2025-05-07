@@ -1,0 +1,286 @@
+/* Custom styles for the e-commerce website */
+
+/* Scroll Animation Classes */
+.scroll-animate {
+  transition-duration: 0.8s;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition-property: opacity, transform;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.animated {
+  opacity: 1;
+}
+
+/* Animation Types */
+.fade-up {
+  transform: translateY(30px);
+}
+
+.animated.fade-up {
+  transform: translateY(0);
+}
+
+.fade-down {
+  transform: translateY(-30px);
+}
+
+.animated.fade-down {
+  transform: translateY(0);
+}
+
+.fade-left {
+  transform: translateX(30px);
+}
+
+.animated.fade-left {
+  transform: translateX(0);
+}
+
+.fade-right {
+  transform: translateX(-30px);
+}
+
+.animated.fade-right {
+  transform: translateX(0);
+}
+
+.zoom-in {
+  transform: scale(0.9);
+}
+
+.animated.zoom-in {
+  transform: scale(1);
+}
+
+.zoom-out {
+  transform: scale(1.1);
+}
+
+.animated.zoom-out {
+  transform: scale(1);
+}
+
+/* Animation Delays */
+.delay-100 {
+  transition-delay: 0.1s;
+}
+
+.delay-200 {
+  transition-delay: 0.2s;
+}
+
+.delay-300 {
+  transition-delay: 0.3s;
+}
+
+.delay-400 {
+  transition-delay: 0.4s;
+}
+
+.delay-500 {
+  transition-delay: 0.5s;
+}
+
+/* Product card hover effects */
+.product-card {
+    transition: all 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Category card hover */
+  .category-card:hover {
+    background-color: #f9fafb;
+  }
+  
+  /* Custom aspect ratio for product images */
+  .aspect-w-1 {
+    position: relative;
+    padding-bottom: 100%;
+    height: 0;
+  }
+  
+  .aspect-w-1 > img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  /* Shopping cart dropdown styles */
+  .cart-icon:hover .cart-dropdown {
+    display: block;
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+  
+  /* Selected states for shipping and payment options */
+  .shipping-option.selected, .payment-option.selected {
+    border-color: #6d28d9;
+    background-color: #f5f3ff;
+  }
+  
+  /* Custom scrollbar for cart */
+  #cart-items::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  #cart-items::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  #cart-items::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 10px;
+  }
+  
+  #cart-items::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+  }
+  
+  /* Star rating hover effects */
+  .star-rating .star {
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .star-rating .star:hover, 
+  .star-rating .star.active {
+    color: #fbbf24;
+  }
+  
+  /* FAQ toggle animation */
+  .faq-toggle[aria-expanded="true"] .fa-chevron-down {
+    transform: rotate(180deg);
+  }
+  
+  /* Toast notification styles */
+  .toast {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem;
+    background: #fff;
+    color: #1f2937;
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    z-index: 50;
+    animation: slideIn 0.3s ease-out forwards;
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  
+  .toast-success {
+    border-left: 4px solid #10b981;
+  }
+  
+  .toast-error {
+    border-left: 4px solid #ef4444;
+  }
+  
+  .toast-warning {
+    border-left: 4px solid #f59e0b;
+  }
+  
+  .toast-info {
+    border-left: 4px solid #3b82f6;
+  }
+  
+  /* Tag styles */
+  .tag {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .tag-primary {
+    background-color: #e5e7eb;
+    color: #374151;
+  }
+  
+  .tag-sale {
+    background-color: #fee2e2;
+    color: #b91c1c;
+  }
+  
+  .tag-new {
+    background-color: #d1fae5;
+    color: #047857;
+  }
+  
+  /* Mobile menu toggle */
+  .mobile-menu {
+    transition: max-height 0.3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+  }
+  
+  .mobile-menu.open {
+    max-height: 1000px;
+  }
+  
+  /* Custom list view for products */
+  .list-view .product-card {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 1rem;
+  }
+  
+  .list-view .product-image {
+    height: 150px;
+    width: 150px;
+  }
+  
+  /* Code syntax highlighting for developer products */
+  .code-preview {
+    background: #1e1e3f;
+    color: #9efeff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-family: monospace;
+    overflow-x: auto;
+  }
+  
+  /* Grid view for product images in detail page */
+  .product-image-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 0.5rem;
+  }
+  
+  /* Product zoom effect */
+  .zoom-image {
+    transition: transform 0.3s ease;
+  }
+  
+  .zoom-image:hover {
+    transform: scale(1.05);
+  }
